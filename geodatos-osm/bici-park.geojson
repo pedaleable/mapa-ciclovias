@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2015-07-14T20:47:02Z",
+  "timestamp": "2015-11-17T02:42:02Z",
   "features": [
     {
       "type": "Feature",
@@ -717,22 +717,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/1756188474",
-      "properties": {
-        "@id": "node/1756188474",
-        "amenity": "bicycle_parking",
-        "capacity": "10"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.7995141,
-          -33.6234643
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "node/1773274887",
       "properties": {
         "@id": "node/1773274887",
@@ -1018,6 +1002,7 @@
       "properties": {
         "@id": "node/1824717149",
         "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
         "capacity": "30",
         "covered": "no",
         "designation": "Cultural Center",
@@ -2367,52 +2352,6 @@
         "coordinates": [
           -70.6361169,
           -33.4305678
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "node/1833779639",
-      "properties": {
-        "@id": "node/1833779639",
-        "access": "no",
-        "addr:city": "Providencia",
-        "addr:state": "Region Metropolitana de Santiago",
-        "amenity": "bicycle_parking",
-        "bicimapa_acceso": "Privado",
-        "bicimapa_ambiente": "fuera",
-        "bicimapa_calle": "Avenida El Vergel",
-        "bicimapa_capacidad": "3",
-        "bicimapa_comentario": "En buen estados, no est? fijo al suelo, Solo para el uso de quienes van a reali",
-        "bicimapa_comuna": "Providencia",
-        "bicimapa_direccion": "-33.4309,-70.5948833,Avenida El Vergel 2810,Providencia,Region Metropolitana,",
-        "bicimapa_edificio": "Yoga",
-        "bicimapa_fecha": "5-31-2012 16:37:42",
-        "bicimapa_horarios": "6-8-2012",
-        "bicimapa_latitud": "-33.430900000000001",
-        "bicimapa_longitud": "-70.594883300000006",
-        "bicimapa_nombre": "Atmanjali",
-        "bicimapa_numero": "2810",
-        "bicimapa_ocupacion": "0.8",
-        "bicimapa_precio": "$0 (gratuito)",
-        "bicimapa_precision": "1.000000000000000",
-        "bicimapa_proteccion": "aire libre",
-        "bicimapa_revision": "Por revisar",
-        "bicimapa_sector": "Esquina con Avenida El Bosque",
-        "bicimapa_seguridad": "sin seguridad alguna",
-        "bicimapa_tipo": "Triangular lineal",
-        "bicimapa_tooltip": "Atmanjali",
-        "bicimapa_uid": "EST_PRO_CW_009",
-        "capacity": "3",
-        "fee": "no",
-        "name": "Atmanjali",
-        "source": "Bicimapa - UAHC"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.5947874,
-          -33.4307616
         ]
       }
     },
@@ -7339,6 +7278,7 @@
       "properties": {
         "@id": "node/3331853461",
         "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
         "capacity": "50",
         "name": "Universidad de Chile"
       },
@@ -7377,6 +7317,301 @@
         "coordinates": [
           -70.5936748,
           -33.4564128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3726922713",
+      "properties": {
+        "@id": "node/3726922713",
+        "amenity": "bicycle_parking",
+        "capacity": "5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6506639,
+          -33.4370744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3728448346",
+      "properties": {
+        "@id": "node/3728448346",
+        "amenity": "bicycle_parking",
+        "capacity": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6198941,
+          -33.4295825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3728448347",
+      "properties": {
+        "@id": "node/3728448347",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6196735,
+          -33.4285128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3728449632",
+      "properties": {
+        "@id": "node/3728449632",
+        "amenity": "bicycle_parking",
+        "capacity": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6203208,
+          -33.4285302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3728449758",
+      "properties": {
+        "@id": "node/3728449758",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6184648,
+          -33.4236009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3730940970",
+      "properties": {
+        "@id": "node/3730940970",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6644387,
+          -33.4520961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3730940971",
+      "properties": {
+        "@id": "node/3730940971",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6644655,
+          -33.4518096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736354929",
+      "properties": {
+        "@id": "node/3736354929",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5429009,
+          -33.4081006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736354931",
+      "properties": {
+        "@id": "node/3736354931",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6799551,
+          -33.442944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736354932",
+      "properties": {
+        "@id": "node/3736354932",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.680567,
+          -33.4405244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736361907",
+      "properties": {
+        "@id": "node/3736361907",
+        "amenity": "bicycle_parking",
+        "capacity": "12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5827227,
+          -33.4152864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736361910",
+      "properties": {
+        "@id": "node/3736361910",
+        "amenity": "bicycle_parking",
+        "capacity": "8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5429513,
+          -33.4085528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736365155",
+      "properties": {
+        "@id": "node/3736365155",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5429225,
+          -33.4079765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736365177",
+      "properties": {
+        "@id": "node/3736365177",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6802375,
+          -33.4400371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736365178",
+      "properties": {
+        "@id": "node/3736365178",
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "wall_loops",
+        "capacity": "9",
+        "covered": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6649848,
+          -33.444927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3736366087",
+      "properties": {
+        "@id": "node/3736366087",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6795089,
+          -33.442163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3750035988",
+      "properties": {
+        "@id": "node/3750035988",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6332538,
+          -33.4264121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3750036532",
+      "properties": {
+        "@id": "node/3750036532",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6450259,
+          -33.4366562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3753831963",
+      "properties": {
+        "@id": "node/3753831963",
+        "amenity": "bicycle_parking"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5868333,
+          -33.4557449
         ]
       }
     }

@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2014-10-02T15:33:02Z",
+  "timestamp": "2015-11-17T02:47:01Z",
   "features": [
     {
       "type": "Feature",
@@ -366,22 +366,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/1306321846",
-      "properties": {
-        "@id": "node/1306321846",
-        "name": "Arreglo Bicicletas",
-        "shop": "bicycle"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.7435982,
-          -33.8136227
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "node/1390708129",
       "properties": {
         "@id": "node/1390708129",
@@ -607,14 +591,19 @@
       "id": "node/2449994053",
       "properties": {
         "@id": "node/2449994053",
+        "addr:city": "Providencia",
+        "addr:housenumber": "2815",
+        "addr:street": "Diego de Almagro",
         "name": "Traffik",
-        "shop": "bicycle"
+        "phone": "+56228915214",
+        "shop": "bicycle",
+        "website": "http://www.traffik.cl/"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.5912647,
-          -33.4380601
+          -70.5912486,
+          -33.4380422
         ]
       }
     },
@@ -629,8 +618,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.6356552,
-          -33.4309645
+          -70.6356737,
+          -33.4308956
         ]
       }
     },
@@ -787,25 +776,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/2750493982",
-      "properties": {
-        "@id": "node/2750493982",
-        "addr:city": "Ñuñoa",
-        "addr:housenumber": "3751-e",
-        "addr:street": "Simón Bolívar",
-        "name": "BICICLETAS",
-        "shop": "bicycle"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.591638,
-          -33.4485259
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "node/2761010983",
       "properties": {
         "@id": "node/2761010983",
@@ -940,6 +910,158 @@
         "coordinates": [
           -70.7308531,
           -33.444262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3191088172",
+      "properties": {
+        "@id": "node/3191088172",
+        "addr:city": "Ñuñoa",
+        "addr:housenumber": "3571",
+        "addr:street": "Avenida Presidente Battle y Ordoñez",
+        "name": "BiciRevolución",
+        "opening_hours": "Mo-Fr 12:00-20:00;Sa 10:00-16:00",
+        "service:bicycle:rental": "yes",
+        "service:bicycle:repair": "yes",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5921386,
+          -33.4482556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3468378580",
+      "properties": {
+        "@id": "node/3468378580",
+        "name": "Taller Bicicletas La Familia",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7192852,
+          -33.4438968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3504126815",
+      "properties": {
+        "@id": "node/3504126815",
+        "addr:city": "Santiago",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "name": "Regazza",
+        "operator": "Claudia",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6590415,
+          -33.5186949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3750035990",
+      "properties": {
+        "@id": "node/3750035990",
+        "name": "Biciboss",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6651483,
+          -33.436218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3753838314",
+      "properties": {
+        "@id": "node/3753838314",
+        "name": "Bicicletas Trinx",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5600234,
+          -33.4072984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3796314266",
+      "properties": {
+        "@id": "node/3796314266",
+        "name": "KTM Bikes Chile",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5466331,
+          -33.4082951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3796319873",
+      "properties": {
+        "@id": "node/3796319873",
+        "name": "ExtremeZone",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5489391,
+          -33.3889373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3796319874",
+      "properties": {
+        "@id": "node/3796319874",
+        "name": "Just Bikes",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5498795,
+          -33.3867446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3820623692",
+      "properties": {
+        "@id": "node/3820623692",
+        "shop": "bicycle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6663012,
+          -33.4557878
         ]
       }
     }
