@@ -1,40 +1,64 @@
-# Santiago pedaleable, versión 0.3
+# Santiago pedaleable
 
-Rediseño completo, porque las herramientas con las que se construyeron las versiones anteriores ya están obsoletas.
+## Qué es?
 
-## Sistema anterior (v0.2)
+Es un mapa que resalta la infraestructura para ciclistas por sobre el resto de la información.
+
+Se centra en las ciclovías, las estaciones de bicicletas públicas y los estacionamientos de bicicletas. Como complemento aparecen las tiendas y talleres de bicicletas.
+
+Toda la información a representar se obtiene de OpenStreetMap.  
+
+## Instrucciones de uso
 
 Flujo de trabajo:
 
 - Datos se obtienen con un script de overpass api
-- Se les da una apariencia personalizada en tilemill
-- Se crea una capa de mosaicos raster que abarca solamente a Santiago
 
-Características_
+### Para las ciclovías:
 
-- Hay que actualizar a mano
-- Tilemill ya no funciona bien en OSX 10.11
-- Es muy difícil de replicar
-- No es escalable (no funciona bien para varias ciudades)
+Pueden ir etiquetadas en las calles:
 
-## Propuesta para esta versión (v0.3)
+`highway=() + cycleway=lane` (sin segregación física)
+`highway=() + cycleway=track` (con segregación física)
 
-Flujo de trabajo
+O dibujadas de modo autónomo:
 
-- Datos se obtienen con overpass api
-- Se añaden a un mapa como una capa geojson directamente
-- Líneas se dibujan en color verde, sin distinciones de tipo o sentido
+`highway=cycleway`
 
-Características:
+Se pueden descargar estos tres tipos con el siguiente script de overpass turbo
 
-- Se mantiene la necesidad de actualizar a mano, pero es un proceso más sencillo.
-- No requiere de ningún software para procesar los datos. Se puede actualizar desde cualquier computador con internet.
-- Permite algo más de escalabilidad.
-- Usa mapbox.js, más compatible y ya sé cómo ocuparlo (algo).
+```
+/*
+script para obtener las ciclovías. Hecho por Ignacio Abé, con la ayuda del asistente de overpass turbo
+*/
+[out:json][timeout:25];
+// gather results
+(
+  // query part for: “cycleway=lane”
+  way["cycleway"="lane"]({{bbox}});
+  relation["cycleway"="lane"]({{bbox}});
 
-## Propuesta para la versión 0.4
+  // query part for: “cycleway=track”
+  way["cycleway"="track"]({{bbox}});
+  relation["cycleway"="track"]({{bbox}});
 
-El elementos más importante es lograr que la capa se actualice sola. Para esto hay distintas alternativas:
+  // query part for: “highway=cycleway”
+  way["highway"="cycleway"]({{bbox}});
+  relation["highway"="cycleway"]({{bbox}});
 
-- Pasarse a mapbox GL
-- Con mapbox.js, ocupar el overpass api directo para solicitar los datos en tiempo real.
+);
+// print results
+out body;
+>;
+out skel qt;
+```
+
+### Para los puntos de interés
+
+`amenity=bicycle_rental` (estaciones de bicicletas públicas)
+`amenity=bicycle_parking` (estacionamientos de bicicleta)
+`shop=bicycle` (talleres y/o tiendas de bicicleta)
+
+Por simpleza, se descargan tres archivos de puntos separados
+
+eof

@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2015-11-17T02:46:02Z",
+  "timestamp": "2016-04-28T23:18:02Z",
   "features": [
     {
       "type": "Feature",
@@ -1513,8 +1513,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.6596424,
-          -33.4416947
+          -70.6593922,
+          -33.4416988
         ]
       }
     },
@@ -2545,6 +2545,22 @@
         "coordinates": [
           -70.6056705,
           -33.4539278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/3892051490",
+      "properties": {
+        "@id": "node/3892051490",
+        "amenity": "bicycle_rental",
+        "name": "Itau bike"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.5857933,
+          -33.3906895
         ]
       }
     }
