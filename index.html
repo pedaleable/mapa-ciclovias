@@ -152,8 +152,14 @@ var myStyle = {
 // DATOS CICLOVÍAS (añadir las ciclovías primero, sacar lo que ya ni sirve después)
 
 var cicloviasGeojson = new L.GeoJSON.AJAX("./geodatos-osm/ciclovias.geojson", {
-  style: myStyle
-})
+  style: function(feature) {
+    switch (feature.properties.oneway) {
+      case "yes": return {color: "#ff0000"};
+      case "no": return {color: "#0000ff"};
+      default: return {color: "#00ff00"};
+    }
+  }
+});
 
 //respaldo base clara
 //var base_cl		= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{z}/{x}/{y}.png'),
