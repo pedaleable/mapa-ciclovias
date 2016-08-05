@@ -153,10 +153,10 @@ var myStyle = {
 
 var cicloviasGeojson = new L.GeoJSON.AJAX("./geodatos-osm/ciclovias.geojson", {
   style: function(feature) {
-    switch (feature.properties.oneway) {
-      case "yes": return {color: "#ff0000"};
-      case "no": return {color: "#0000ff"};
-      default: return {color: "#00ff00"};
+    switch (feature.properties.pedaleable) {
+      case "minvu": return {color: "#00DB3A"};
+      case "peligroso": return {color: "#ff3500"};
+      default: return {color: "#A4F600"};
     }
   }
 });
