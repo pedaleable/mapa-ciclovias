@@ -38,7 +38,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -839,7 +839,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -1174,7 +1174,7 @@
         "name": "Mario Kreutzberger",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -3386,7 +3386,7 @@
         "name": "Avenida Ricardo Lyon",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -5497,7 +5497,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -6012,7 +6012,7 @@
         "@id": "way/93256753",
         "highway": "cycleway",
         "oneway": "yes",
-        "pedaleable": "peligroso"
+        "cycleway:standard": "peligroso"
       },
       "geometry": {
         "type": "LineString",
@@ -10439,7 +10439,7 @@
         "highway": "primary",
         "name": "Carmen",
         "oneway": "yes",
-        "pedaleable": "peligroso"
+        "cycleway:standard": "peligroso"
       },
       "geometry": {
         "type": "LineString",
@@ -12539,7 +12539,7 @@
         "name": "Avenida Ricardo Lyon",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -14885,7 +14885,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -16205,7 +16205,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -16247,7 +16247,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -17786,7 +17786,7 @@
         "name": "Rosas",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -18476,7 +18476,7 @@
         "name": "Ricardo Lyon",
         "oneway": "yes",
         "oneway:bicycle": "no",
-        "pedaleable": "minvu"
+        "cycleway:standard": "minvu"
       },
       "geometry": {
         "type": "LineString",
@@ -19193,7 +19193,7 @@
         "@id": "way/323349190",
         "highway": "cycleway",
         "oneway": "yes",
-        "pedaleable": "peligroso"
+        "cycleway:standard": "peligroso"
       },
       "geometry": {
         "type": "LineString",

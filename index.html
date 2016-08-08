@@ -153,7 +153,7 @@ var myStyle = {
 
 var cicloviasGeojson = new L.GeoJSON.AJAX("./geodatos-osm/ciclovias.geojson", {
   style: function(feature) {
-    switch (feature.properties.pedaleable) {
+    switch (feature.properties['cycleway:standard']) {
       case "minvu": return {color: "#00DB3A"};
       case "peligroso": return {color: "#ff3500"};
       default: return {color: "#A4F600"};
