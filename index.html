@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <title>
-      SANTIAGO PEDALEABLE
+      Santiago Pedaleable
   </title>
 
 <!--leaflet-->
@@ -19,37 +19,53 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <style type="text/css">
+<!--google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+
+<style>
   body {
-      padding: 0;
-      margin: 0;
+    padding: 0;
+    margin: 0;
   }
-  html, body, #map {
-      height: 100%;
+  html, body {
+    height: 100%;
   }
-  </style>
+
+#header {
+height: 40px;
+background-color: #323232;
+}
+
+#header h1 {
+font-weight: normal;
+color: #E63C1E;
+margin: 0px;
+padding-left: 10px;
+padding-top: 5px;
+font-family: 'Ropa Sans', sans-serif;
+}
+
+#map {
+height: calc(100% - 40px);
+position:relative;
+}
+
+
+</style>
 
 </head>
 
+<div id="header">
+  <h1>Santiago Pedaleable</h1>
+</div>
+
 <div id="map"></div>
 
-
-<!-- leaflet markercluster -->
-
-<!--
-<link rel="stylesheet" href="http://rawgit.com/Leaflet/Leaflet.markercluster/master/dist/MarkerCluster.Default.css" />
-<script src="http://rawgit.com/Leaflet/Leaflet.markercluster/master/dist/leaflet.markercluster.js"></script>
--->
 
 <!-- leaflet ajax -->
 
 <script src="http://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
 
-<!-- leaflet maki markers -->
-
-<!--
-<script src="http://rawgit.com/jseppi/Leaflet.MakiMarkers/master/Leaflet.MakiMarkers.js"></script>
--->
 
 </div>
 
@@ -173,12 +189,13 @@ var base_cl		= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{
 var map = L.map('map', {
     center: [-33.435, -70.635],
     zoom: 15,
-    layers: [base_cl, cicloviasGeojson]
+    layers: [base_os, cicloviasGeojson]
 });
 
 var baseMaps = {
-    "base_clara": base_cl,
-    "base_oscura": base_os
+    "base_oscura": base_os,
+    "base_clara": base_cl
+
 };
 
 var overlayMaps = {
@@ -191,6 +208,22 @@ var overlayMaps = {
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
 
-map.locate({setView: true, maxZoom: 15});
+function onLocationFound(e) {
+			var radius = e.accuracy / 2;
+
+			L.marker(e.latlng).addTo(map)
+				.bindPopup("Estás a " + radius + " metros de este punto").openPopup();
+
+			L.circle(e.latlng, radius).addTo(map);
+		}
+
+		function onLocationError(e) {
+			alert(e.message);
+		}
+
+		map.on('locationfound', onLocationFound);
+		map.on('locationerror', onLocationError);
+
+		map.locate({setView: true, maxZoom: 16});
 
 </script>
