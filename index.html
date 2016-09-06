@@ -212,7 +212,7 @@ function onLocationFound(e) {
 			var radius = e.accuracy / 2;
 
 			L.marker(e.latlng).addTo(map)
-				.bindPopup("Estás a " + radius + " metros de este punto").openPopup();
+				.bindPopup("Estás a " + Math.round(radius) + " metros de este punto").openPopup();
 
 			L.circle(e.latlng, radius).addTo(map);
 		}
