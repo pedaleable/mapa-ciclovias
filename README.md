@@ -29,23 +29,17 @@ Se pueden descargar estos tres tipos con el siguiente script de overpass turbo
 
 ```
 /*
-script para obtener las ciclovías. Hecho por Ignacio Abé, con la ayuda del asistente de overpass turbo
+Script eficiente para obtener las ciclovías. Hecho por Ignacio Abé, con la ayuda del asistente de overpass turbo.
+Ojo que no existan boludeces como cycleway=no.
 */
+
 [out:json][timeout:25];
 // gather results
 (
-  // query part for: “cycleway=lane”
-  way["cycleway"="lane"]({{bbox}});
-  relation["cycleway"="lane"]({{bbox}});
-
-  // query part for: “cycleway=track”
-  way["cycleway"="track"]({{bbox}});
-  relation["cycleway"="track"]({{bbox}});
-
-  // query part for: “highway=cycleway”
+//script eficiente que toma todas las ciclovías
+//ojo que no existan boludeces como cycleway=no
+  way["cycleway"]({{bbox}});
   way["highway"="cycleway"]({{bbox}});
-  relation["highway"="cycleway"]({{bbox}});
-
 );
 // print results
 out body;
