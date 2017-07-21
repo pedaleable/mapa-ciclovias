@@ -186,11 +186,15 @@ var base_cl		= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{
     strava		= L.tileLayer('http://globalheat.strava.com/tiles/both/color1/{z}/{x}/{y}.png', {opacity: 0.5, attribution:'<a href="http://labs.strava.com/heatmap/">strava heatmap</a>'}),
     ciclovias	= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.stgo-ciclovias/{z}/{x}/{y}.png');
 
+//definición base mapa y layers activados por defecto
+
 var map = L.map('map', {
     center: [-33.435, -70.635],
     zoom: 15,
     layers: [base_os, cicloviasGeojson]
 });
+
+//definición control de capas
 
 var baseMaps = {
     "base_oscura": base_os,
@@ -207,6 +211,8 @@ var overlayMaps = {
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+//scripts de geolocalización
 
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
