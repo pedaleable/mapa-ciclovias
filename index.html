@@ -89,8 +89,8 @@ var estiloPark = {
 //estilo bicicletas públicas
 var estiloRent = {
     radius: 8,
-    fillColor: "#f33",
-    color: "#f33",
+    fillColor: "#ff9a19",
+    color: "#ff9a19",
     weight: 1.5,
     opacity: 1,
     fillOpacity: 0.5
@@ -197,17 +197,17 @@ var map = L.map('map', {
 //definición control de capas
 
 var baseMaps = {
-    "base_oscura": base_os,
-    "base_clara": base_cl
+    "Mapa base oscuro": base_os,
+    "Mapa base claro": base_cl
 
 };
 
 var overlayMaps = {
-    "flujos (strava)": strava,
-    "__ciclovias_geojson": cicloviasGeojson,
-    "__bici_est": biciPark,
-    "__bici_pub": biciRent,
-    "__bici_shop": biciShop
+    "Ciclovías": cicloviasGeojson,
+    "Flujos (strava heatmap)": strava,
+    "Estacionamientos": biciPark,
+    "Estaciones Bike Santiago": biciRent,
+    "Tiendas y talleres": biciShop
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
