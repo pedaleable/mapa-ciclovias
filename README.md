@@ -54,7 +54,7 @@ Luego de descargar esta información y meterla en la carpeta `geodatos-osm` con 
 
 ### Para los puntos de interés
 
-`amenity=bicycle_rental` (estaciones de bicicletas públicas)
-`amenity=bicycle_parking` (estacionamientos de bicicleta)
+- `amenity=bicycle_rental` (estaciones de bicicletas públicas)
+- `amenity=bicycle_parking` (estacionamientos de bicicleta)
 
 Por simpleza, se descargan dos archivos de puntos separados.
