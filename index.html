@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <title>
-      Santiago Pedaleable
+      Mapa ciclovías (Santiago - CL)
   </title>
 
 <!--leaflet-->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
 <!--favicon-->
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -55,7 +55,7 @@ position:relative;
 </head>
 
 <div id="header">
-  <h1>Santiago Pedaleable</h1>
+  <h1>Mapa ciclovías</h1>
 </div>
 
 <div id="map"></div>
@@ -161,7 +161,7 @@ layer.bindPopup(
 var myStyle = {
     "color": "#3BDB2A",
     "weight": 5,
-    "opacity": 0.65
+    "opacity": 0.5
 };
 
 // DATOS CICLOVÍAS (añadir las ciclovías primero, sacar lo que ya ni sirve después)
@@ -171,12 +171,12 @@ var cicloviasGeojson = new L.GeoJSON.AJAX("./geodatos-osm/ciclovias.geojson", {
     switch (feature.properties['cycleway:standard']) {
       case "minvu": return {color: "#00DB3A"};
       case "peligroso": return {color: "#ff3500"};
-      default: return {color: "#A4F600"};
+      default: return {color: "#A4F600", opacity: 0.5};
     }
   }
 });
 
-//respaldo base clara XX
+//respaldo base clara XXxx
 //var base_cl		= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{z}/{x}/{y}.png'),
 //http://otile[1234].mqcdn.com/tiles/1.0.0/osm/zoom/x/y.jpg
 
