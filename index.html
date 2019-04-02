@@ -12,8 +12,11 @@
   </title>
 
   <!--leaflet!!!-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
   <!--favicon-->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -227,23 +230,26 @@
 
     //scripts de geolocalización / CAMBIAR POR UN BOTÓN IDEALMENTE
     function onLocationFound(e) {
-    			var radius = e.accuracy / 2;
+      var radius = e.accuracy / 2;
 
-    			L.marker(e.latlng).addTo(map)
-    				.bindPopup("Estás a " + Math.round(radius) + " metros de este punto").openPopup();
+      L.marker(e.latlng).addTo(map)
+        .bindPopup("Estás a " + Math.round(radius) + " metros de este punto").openPopup();
 
-    			L.circle(e.latlng, radius).addTo(map);
-    		}
+      L.circle(e.latlng, radius).addTo(map);
+    }
 
-    		function onLocationError(e) {
-    			alert(e.message);
-    		}
+    function onLocationError(e) {
+      alert(e.message);
+    }
 
-    		map.on('locationfound', onLocationFound);
-    		map.on('locationerror', onLocationError);
+    map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
 
-    		map.locate({setView: true, maxZoom: 16});
-
+    map.locate({
+      setView: true,
+      maxZoom: 16
+    });
+    
   </script>
 
 </body>
