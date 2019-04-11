@@ -38,15 +38,17 @@ out skel qt;
 #### Listado de campos relevantes:
 
 - name
+- highway
 - cycleway
 - cycleway:left
 - cycleway:right
 - oneway-bicycle
 - estandar:minvu
+- route
 
 Luego de descargar esta información y meterla en la carpeta `geodatos-osm` con el nombre `export.geojson` se puede hacer mucho más eficiente el archivo con un comando de NPM llamado `geojson-pick`.
 
-`geojson-pick name highway cycleway cycleway:left cycleway:right oneway:bicycle estandar:minvu cycleway route < export.geojson > ciclovias.geojson`
+`geojson-pick name highway cycleway cycleway:left cycleway:right oneway:bicycle estandar:minvu route < export.geojson > ciclovias.geojson`
 
 *Antes de usarlo hay que instalar el paquete de NPM llamado `geojson-pick` con el siguiente comando:*
 
