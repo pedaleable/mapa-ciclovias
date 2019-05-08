@@ -26,7 +26,7 @@ Flujo de trabajo:
   // parte de la consulta para ciclovías independientes
   way["highway"="cycleway"]({{bbox}});
   // parte de la consulta para relaciones de rutas pedaleables (que no hay en santiago realmente, excepto quizás el mapocho)
-  relation["route"="bicycle"]({{bbox}});
+  // APAGADO POR AHORA // relation["route"="bicycle"]({{bbox}});
 );
 
 // print results
