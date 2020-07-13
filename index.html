@@ -2,263 +2,68 @@
 <html>
 
 <head>
+    <meta charset="utf-8" />
+    <title>SANTIAGO</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-  <meta charset="UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-  <title>
-    Mapa ciclovías (Santiago - CL)
-  </title>
-
-  <!--leaflet!!!-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin="" />
-
-  <!-- Make sure you put this AFTER Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-    crossorigin=""></script>
-
-  <!--favicon-->
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!--google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
-
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
-
-    #header {
-      height: 40px;
-      background-color: #323232;
-    }
-
-    #header h1 {
-      font-weight: normal;
-      color: #A4F600;
-      margin: 0px;
-      padding-left: 10px;
-      padding-top: 5px;
-      font-family: 'Ropa Sans', sans-serif;
-    }
-
-    #map {
-      height: calc(100% - 40px);
-      position: relative;
-    }
-  </style>
-
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-  <div id="header">
-    <h1>MAPA CICLOVÍAS</h1>
-  </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js">
+    </script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css" />
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaWduYWNpb2FiZSIsImEiOiJsTDV0dWFJIn0.Og513NMky_08_sXUUDsrbA';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/ignacioabe/ckckoyf9a56wf1il5by9zpckw', // stylesheet location
+            center: [-70.644, -33.450], // starting position [lng, lat]
+            zoom: 11 // starting zoom
+        });
 
-  <div id="map"></div>
-
-
-  <!-- leaflet ajax -->
-
-  <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
-
-
-  </div>
-
-  <script>
-    // la gran lata de este sistema es que hay que exportar tres archivos separados
-    // desde overpass.turbo
-
-    // ESTILO PUNTOS
-
-    //estilo bicicleteros
-    var estiloPark = {
-      radius: 4,
-      fillColor: "#1c1",
-      color: "#1c1",
-      weight: 1.5,
-      opacity: 1,
-      fillOpacity: 0.5
-    };
-
-    //estilo bicicletas públicas
-    var estiloRent = {
-      radius: 8,
-      fillColor: "#ff9a19",
-      color: "#ff9a19",
-      weight: 1.5,
-      opacity: 1,
-      fillOpacity: 0.5
-    };
-
-    //estilo talleres
-    var estiloShop = {
-      radius: 8,
-      fillColor: "#459dff",
-      color: "#459dff",
-      weight: 1.5,
-      opacity: 1,
-      fillOpacity: 0.5
-    };
-
-
-
-    // DATOS PUNTOS
-
-    //layer bicicleteros
-    var biciPark = new L.GeoJSON.AJAX("./geodatos-osm/bici-park.geojson", {
-
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng);
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          "<b>NOMBRE:</b> " + feature.properties.name +
-          "<br><b>Capacidad:</b> " + feature.properties.capacity
+        map.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl,
+                language: 'es',
+                country: "cl",
+                proximity: "-70.644, -33.450",
+                placeholder: "BUSCAR UN LUGAR",
+                types: "place,locality,neighborhood,address"
+            })
         );
-      },
-      style: estiloPark
-    });
 
-    //layer bicicletas públicas
-    var biciRent = new L.GeoJSON.AJAX("./geodatos-osm/bici-rent.geojson", {
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
 
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng);
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          "<b>NOMBRE:</b> " + feature.properties.name +
-          "<br><b>Capacidad:</b> " + feature.properties.capacity +
-          "<br><b>Operador:</b> " + feature.properties.operator
+        // Add geolocate control to the map.
+        map.addControl(
+            new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true
+                },
+                trackUserLocation: true
+            })
         );
-      },
-      style: estiloRent
-    });
 
-    //layer talleres
-    //me gustaría poner las direcciones pero tengo problemas con los keys compuestos
-    //ej addr:street=
-    var biciShop = new L.GeoJSON.AJAX("./geodatos-osm/bici-shop.geojson", {
-
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng);
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          "<b>NOMBRE:</b> " + feature.properties.name
-        );
-      },
-      style: estiloShop
-    });
-
-    // ESTILO CICLOVÍAS
-
-    var myStyle = {
-      "color": "#3BDB2A",
-      "weight": 5,
-      "opacity": 0.5
-    };
-
-    // DATOS CICLOVÍAS (añadir las ciclovías primero, sacar lo que ya ni sirve después)
-
-    var cicloviasGeojson = new L.GeoJSON.AJAX("./geodatos-osm/ciclovias.geojson", {
-      style: function (feature) {
-        switch (feature.properties['cycleway:standard']) {
-          case "minvu":
-            return {
-              color: "#00DB3A"
-            };
-          case "peligroso":
-            return {
-              color: "#ff3500"
-            };
-          default:
-            return {
-              color: "#A4F600",
-                opacity: 0.5
-            };
-        }
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          "<b>NOMBRE:</b> " + feature.properties.name
-        );
-      },
-    });
-
-    //respaldo base clara XXxx
-    //var base_cl		= L.tileLayer('http://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{z}/{x}/{y}.png'),
-    //http://otile[1234].mqcdn.com/tiles/1.0.0/osm/zoom/x/y.jpg
-
-    var base_cl = L.tileLayer('https://{s}.tiles.mapbox.com/v3/ignacioabe.j74kak2h/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-      }),
-      base_os = L.tileLayer('https://{s}.tiles.mapbox.com/v3/ignacioabe.map-srs3by8q/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-      }),
-      // strava		= L.tileLayer('https://heatmap-external-{switch:a,b,c}.strava.com/tiles/run/bluered/{z}/{x}/{y}.png', {opacity: 0.5, attribution:'<a href="http://labs.strava.com/heatmap/">Strava</a>'}),
-      ciclovias = L.tileLayer('https://{s}.tiles.mapbox.com/v3/ignacioabe.stgo-ciclovias/{z}/{x}/{y}.png');
-
-    //definición base mapa y layers activados por defecto
-
-    var map = L.map('map', {
-      center: [-33.435, -70.635],
-      zoom: 15,
-      layers: [base_os, cicloviasGeojson]
-    });
-
-    //definición control de capas
-
-    var baseMaps = {
-      "Mapa base oscuro": base_os,
-      "Mapa base claro": base_cl
-
-    };
-
-    var overlayMaps = {
-      "Ciclovías": cicloviasGeojson,
-      // "Flujos (strava heatmap)": strava,
-      "Estacionamientos": biciPark,
-      "Estaciones Bike Santiago": biciRent,
-      "Tiendas y talleres": biciShop
-    };
-
-    L.control.layers(baseMaps, overlayMaps).addTo(map);
-
-    //scripts de geolocalización / CAMBIAR POR UN BOTÓN IDEALMENTE
-    function onLocationFound(e) {
-      var radius = e.accuracy / 2;
-
-      L.marker(e.latlng).addTo(map)
-        .bindPopup("Estás a " + Math.round(radius) + " metros de este punto").openPopup();
-
-      L.circle(e.latlng, radius).addTo(map);
-    }
-
-    function onLocationError(e) {
-      alert(e.message);
-    }
-
-    map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError);
-
-    map.locate({
-      setView: true,
-      maxZoom: 16
-    });
-  </script>
+    </script>
 
 </body>
 

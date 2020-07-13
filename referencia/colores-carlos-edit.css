@@ -1,0 +1,57 @@
+div {
+    margin: 10px;
+    padding: 5px;
+}
+
+.ciudad {
+    padding: 50px;
+    background-color: #bbcdba;
+    height: 80%;
+    width: 50%
+}
+
+.calles {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #dfdfdf;
+    font-family: Roboto Light;
+    font-size: 10px;
+    color: #676a70
+}
+
+.calles.recomendadas {
+    border-color: #019eff;
+    border-style: dotted;
+}
+
+.carreteras {
+    border-color: #949494;
+    border-style: solid;
+    font-family: Roboto Medium;
+    font-size: 12px;
+    color: #000000
+}
+
+.ciclovias {
+    text-transform: uppercase;
+    font-family: Roboto Medium;
+    font-size: 10px;
+    color: #000000
+}
+
+.ciclovias.calle {
+    border-color: #196bdb;
+    border-style: solid;
+}
+
+.ciclovias.vereda-bandejon {
+    border-color: #ff6b00;
+    border-style: solid;
+}
+
+.ciclovias.parque {
+    border-color: #009400;
+    border-style: solid;
+}
+
+/*Eso para partir. Sería bueno conversar un rato. Si tienes tiempo hoy hablamos.*/
