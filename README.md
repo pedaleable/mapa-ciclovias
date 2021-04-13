@@ -4,7 +4,7 @@
 
 Es un mapa que muestra las ciclovías (de Santiago de Chile por ahora). Su principal propósito es facilitar los desplazamientos en bicicleta por la ciudad, sobre todo en el marco de la nueva ley de convivencia de modos. De modo complementario se representan puntos de interés en la red de ciclismo, como bicicleteros o estaciones de bicicletas públicas.
 
-Toda la información a representar se obtiene de OpenStreetMap. 
+Toda la información a representar se obtiene de OpenStreetMap.
 
 ## Instrucciones de uso
 

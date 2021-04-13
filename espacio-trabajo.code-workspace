@@ -4,10 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "../../../../../../../repositorios/personales/mapa-ciclovias"
-		},
-		{
-			"path": "../../../../../../../repositorios/personales/mapa-santiago-pedaleable"
+			"path": "../../mapa vías verdes"
 		}
 	],
 	"settings": {}
