@@ -2,12 +2,12 @@
 
 ## Diseño html
 
-- [ ] agregar un encabezado
-- [ ] agregar una leyenda
+- [x] agregar un encabezado
+- [x] agregar una leyenda
 
 ## Automatización
 
-- [ ] Implementar una rutina en node que descargue los datos de ciclovías de overpass.api, los limpie y luego los guarde como un archivo `ciclovias.geojson`.
+- [ ] Implementar una rutina en node o bash que descargue los datos de ciclovías y PDI de overpass.api, los limpie y luego los guarde como un archivo `datos-limpios.geojson`.
 - [ ] Idealmente dejar el mapa corriendo en AWS o HEROKU y que se actualice solo una vez a la semana.
 
 ## Otros

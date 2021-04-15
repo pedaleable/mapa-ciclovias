@@ -9,28 +9,11 @@
 
 ### Pasos
 
-- Descargar la información de OSM de la API overpass directamente, sin usar la interfaz web (overpass turbo).
+- Ir a carpeta raíz del repositorio.
 
-`cd datos/ciclovias/openstreetmap`
+- Ejecutar rutina de descarga y procesamiento de datos.
 
-`wget -O ciclovías.osm --post-file=overpass-query.txt "https://overpass-api.de/api/interpreter"`
-
-- Traspasar el archivo `.osm` a `.geojson`.
-
-`osmtogeojson ciclovías.osm > ciclovías.geojson`
-
-- Moverlos a las carpetas correspondientes
-
-`mv ciclovías.osm 1-originales`
-`mv ciclovías.geojson 2-procesados`
-
-- Limpiar los campos innecesarios del archivo geojson (opcional, facilita análisis).
-
-`cd 2-procesados`
-
-`geojson-pick name highway cycleway oneway cycleway:left cycleway:right oneway:bicycle estandar:minvu route < ciclovías.geojson > ciclovías-limpias.geojson`
-
-Para más información revisar: <http://overpass-api.de/command_line.html>
+`./shell/rutina.sh`
 
 ## PABLO F. LAGOS
 
@@ -42,3 +25,7 @@ Información descargada de:
 
 - Información descargada de: <http://siedu.ine.cl/descargar/descarga.html> (sección cartografía)
 - El archivo original es una carpeta GDB (o geodatabase) de ArcGis, así que no puedo poner el archivo original. Cargué el GDB en QGis y exporté un archivo geopackage y uno shape.
+
+## REF
+
+API overpass desde la línea de comandos <http://overpass-api.de/command_line.html>

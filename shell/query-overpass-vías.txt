@@ -1,0 +1,26 @@
+[out:xml][timeout:25];
+// fetch area “Chile” to search in
+area(3600167454)->.searchArea;
+// gather results
+(
+  // parte de la consulta para ciclovías etiquetadas en la calle
+  way["cycleway"](area.searchArea);
+  
+  // parte de la consulta para ciclovías con el lado marcado
+  // cycleway:left o cycleway:right
+  way[~"^cycleway:.*$"~"."](area.searchArea);
+  
+  // parte de la consulta para ciclovías independientes
+  way["highway"="cycleway"](area.searchArea);
+  
+  // parte de la consulta para relaciones de rutas pedaleables (que no hay en santiago realmente, excepto quizás el mapocho)
+  relation["route"="bicycle"](area.searchArea);
+
+  // restricciones o prioridades para la bicicleta (desactivado por ahora)
+  // way["bicycle"](area.searchArea);
+  
+);
+// print results
+out body;
+>;
+out skel qt;

@@ -1,0 +1,19 @@
+[out:xml][timeout:25];
+// fetch area “Chile” to search in
+area(3600167454)->.searchArea;
+// gather results
+(  
+  // estacionamientos de bicicleta
+  node["amenity"="bicycle_parking"](area.searchArea);
+
+  // estaciones de bicicletas públicas
+  node["amenity"="bicycle_parking"](area.searchArea);
+
+  // talleres de bicicleta
+  node["shop"="bicycle"](area.searchArea);
+  
+);
+// print results
+out body;
+>;
+out skel qt;
