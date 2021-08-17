@@ -8,55 +8,18 @@ Toda la información a representar se obtiene de OpenStreetMap.
 
 ## Instrucciones de uso
 
-Flujo de trabajo:
+Ejecutar `sh shell/rutina.sh` en la carpeta raíz del repositorio.
 
-- Los datos se obtienen con un script de overpass api
+Esto descarga los datos desde la API overpass y les hace unos procesos para eliminar información innecesaria.
 
-### Para las ciclovías:
+Subir archivos manualmente a MAPBOX, reemplazando los tilesets:
 
-```
-[out:xml][timeout:25];
+- `pdi_limpios` con `./datos/puntos-de-interés/openstreetmap/2-procesados/datos.geojson`
+- `ciclovias_limpias` con `./datos/ciclovías/openstreetmap/2-procesados/datos.geojson`
 
-(
-  // parte de la consulta para ciclovías etiquetadas en la calle
-  way["cycleway"]({{bbox}});
-  // parte de la consulta para ciclovías con el lado marcado
-  // cycleway:left o cycleway:right
-  way[~"^cycleway:.*$"~"."]({{bbox}});
-  // parte de la consulta para ciclovías independientes
-  way["highway"="cycleway"]({{bbox}});
-  // parte de la consulta para relaciones de rutas pedaleables (que no hay en santiago realmente, excepto quizás el mapocho)
-  // APAGADO POR AHORA // relation["route"="bicycle"]({{bbox}});
-);
+## Requerimientos
 
-// print results
-out body;
->;
-out skel qt;
-```
+### Paquetes NPM
 
-#### Listado de campos relevantes:
-
-- name
-- highway
-- cycleway
-- cycleway:left
-- cycleway:right
-- oneway-bicycle
-- estandar:minvu
-- route
-
-Luego de descargar esta información y meterla en la carpeta `geodatos-osm` con el nombre `export.geojson` se puede hacer mucho más eficiente el archivo con un comando de NPM llamado `geojson-pick`.
-
-`geojson-pick name highway cycleway oneway cycleway:left cycleway:right oneway:bicycle estandar:minvu route < export.geojson > ciclovias.geojson`
-
-*Antes de usarlo hay que instalar el paquete de NPM llamado `geojson-pick` con el siguiente comando:*
-
-`npm install -g geojson-pick`
-
-### Para los puntos de interés
-
-- `amenity=bicycle_rental` (estaciones de bicicletas públicas)
-- `amenity=bicycle_parking` (estacionamientos de bicicleta)
-
-Por simpleza, se descargan dos archivos de puntos separados.
+- osmtogeojson
+- geojson-pick
