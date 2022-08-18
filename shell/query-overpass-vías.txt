@@ -1,6 +1,9 @@
-[out:xml][timeout:25];
+[out:xml][timeout:100];
 // fetch area “Chile” to search in
 area(3600167454)->.searchArea;
+// Providencia (para debug)
+//area(3600162983)->.searchArea;
+
 // gather results
 (
   // parte de la consulta para ciclovías etiquetadas en la calle
